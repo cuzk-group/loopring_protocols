@@ -58,7 +58,6 @@ module.exports = function(deployer, network, accounts) {
       gas: 6700000
     });
 
-    if (process.env.TEST_ENV == "docker") {
       console.log("setup exchange:");
       const emptyMerkleRoot =
         "0x1efe4f31c90f89eb9b139426a95e5e87f6e0c9e8dab9ddf295e3f9d651f54698";
@@ -129,7 +128,7 @@ module.exports = function(deployer, network, accounts) {
       console.log("poolConfig2:", poolConfig2);
       console.log("ammPool2.address:", ammPool2.address);
 
-
+    if (process.env.TEST_ENV == "docker") {
       const lrcToken = await LRCToken.deployed();
       const gtoToken = await GTOToken.deployed();
       // do the deposit for all accounts:
@@ -169,12 +168,13 @@ module.exports = function(deployer, network, accounts) {
           { from: account, gas: 200000, value: "1" + "0".repeat(20) }
         );
       }
+    }	
 
       // set VK in blockVerifier:
       const vk = JSON.parse(fs.readFileSync("test/all_16_vk.json", "ascii"));
       const vkFlattened = flattenList(flattenVK(vk));
       const blockVerifier = await BlockVerifier.deployed();
       await blockVerifier.registerCircuit(0, 16, 0, vkFlattened);
-    }
+
   });
 };

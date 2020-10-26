@@ -131,7 +131,8 @@ contract LoopringAmmPool is
         // nonReentrant     // Not needed, does not do any external calls (except to the exchange)
                             // and can only be called by the exchange owner.
     {
-	console.log("Enter beforeBlockSubmission: txIdx:", txIdx, "data:", data, "numTxs:", numTxs);
+	console.logString("beforeBlockSubmission data");
+    	console.logBytes(data);
         state.beforeBlockSubmission(_block, data, txIdx, numTxs);
     }
 
