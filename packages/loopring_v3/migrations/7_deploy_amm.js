@@ -2,6 +2,7 @@
 
 const LoopringAmmPool = artifacts.require("LoopringAmmPool");
 const LoopringAmmPoolCopy = artifacts.require("LoopringAmmPoolCopy");
+const LoopringAmmPoolCopy2 = artifacts.require("LoopringAmmPoolCopy2");
 const LoopringAmmSharedConfig = artifacts.require("LoopringAmmSharedConfig");
 const AmmJoinRequest = artifacts.require("AmmJoinRequest");
 const AmmExitRequest = artifacts.require("AmmExitRequest");
@@ -26,8 +27,14 @@ module.exports = function(deployer, network, accounts) {
       await deployer.link(AmmStatus, LoopringAmmPoolCopy);
       await deployer.link(AmmWithdrawal, LoopringAmmPoolCopy);
       await deployer.deploy(LoopringAmmPoolCopy);
-      await deployer.deploy(LoopringAmmSharedConfig);
 
+      await deployer.link(AmmJoinRequest, LoopringAmmPoolCopy2);
+      await deployer.link(AmmExitRequest, LoopringAmmPoolCopy2);
+      await deployer.link(AmmStatus, LoopringAmmPoolCopy2);
+      await deployer.link(AmmWithdrawal, LoopringAmmPoolCopy2);
+      await deployer.deploy(LoopringAmmPoolCopy2);
+
+      await deployer.deploy(LoopringAmmSharedConfig);
       const loopringAmmSharedConfig = await LoopringAmmSharedConfig.deployed();
       await loopringAmmSharedConfig.setMaxForcedExitAge(3600 * 24 * 14);
       await loopringAmmSharedConfig.setMaxForcedExitCount(500);

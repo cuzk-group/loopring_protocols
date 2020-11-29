@@ -36,6 +36,8 @@ contract LoopringAmmPool is
     event ForcedExitProcessed(address owner, uint96 burnAmount, uint96[] amounts);
     event Shutdown(uint timestamp);
 
+    // event LogPoolJoinTransfer
+
     modifier onlyFromExchangeOwner()
     {
         require(msg.sender == state.exchangeOwner, "UNAUTHORIZED");

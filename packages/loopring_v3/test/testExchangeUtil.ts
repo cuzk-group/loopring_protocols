@@ -1980,7 +1980,7 @@ export class ExchangeTestUtil {
 
     // SubmitBlocks raw tx data
     const txData = this.getSubmitCallbackData(onchainBlocks);
-    //console.log(txData);
+    console.log("txData:", txData);
 
     const parameters = this.getSubmitBlocksWithCallbacksData(
       true,

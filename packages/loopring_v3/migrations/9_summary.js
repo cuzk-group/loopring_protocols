@@ -1,6 +1,6 @@
 const LRCToken = artifacts.require("./test/tokens/LRC.sol");
-const GTOToken = artifacts.require("./test/tokens/GTO.sol");
-const WETHToken = artifacts.require("./test/tokens/WETH.sol");
+const USDTToken = artifacts.require("./test/tokens/USDT.sol");
+const INDAToken = artifacts.require("./test/tokens/INDA.sol");
 
 const ProtocolFeeVault = artifacts.require("ProtocolFeeVault");
 const UserStakingPool = artifacts.require("UserStakingPool");
@@ -30,8 +30,8 @@ const LoopringAmmPoolCopy = artifacts.require("LoopringAmmPoolCopy");
 module.exports = function(deployer, network, accounts) {
   console.log(">>> deployed to network: " + network);
   console.log("- LRCToken:", LRCToken.address);
-  console.log("- GTOToken:", GTOToken.address);
-  console.log("- WETHToken:", WETHToken.address);
+  console.log("- USDTToken:", USDTToken.address);
+  console.log("- INDAToken:", INDAToken.address);
   console.log("- ProtocolFeeVault:", ProtocolFeeVault.address);
   console.log("- UserStakingPool:", UserStakingPool.address);
   // console.log("- UniswapTokenSeller:", UniswapTokenSeller.address);

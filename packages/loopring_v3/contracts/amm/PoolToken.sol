@@ -14,7 +14,7 @@ abstract contract PoolToken is ERC2612 {
 
     uint   public constant decimals = 8;
 
-    AmmData.State state;
+    AmmData.State public state;
 
     event Approval(address indexed owner, address indexed spender, uint value);
     event Transfer(address indexed from,  address indexed to,      uint value);

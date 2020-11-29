@@ -1,0 +1,2353 @@
+{
+  "_format": "hh-sol-cache-1",
+  "files": {
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/aux/OfficialGuardian.sol": {
+      "lastModificationDate": 1605155980039,
+      "sourceName": "contracts/aux/OfficialGuardian.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../lib/ERC1271.sol",
+        "../lib/OwnerManagable.sol",
+        "../lib/SignatureUtil.sol",
+        "../thirdparty/BytesUtil.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["OfficialGuardian"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/ERC1271.sol": {
+      "lastModificationDate": 1605155980045,
+      "sourceName": "contracts/lib/ERC1271.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["ERC1271"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/OwnerManagable.sol": {
+      "lastModificationDate": 1605155980043,
+      "sourceName": "contracts/lib/OwnerManagable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["./AddressSet.sol", "./Claimable.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["OwnerManagable"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/SignatureUtil.sol": {
+      "lastModificationDate": 1605155980046,
+      "sourceName": "contracts/lib/SignatureUtil.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../thirdparty/BytesUtil.sol",
+        "./AddressUtil.sol",
+        "./ERC1271.sol",
+        "./MathUint.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["SignatureUtil"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/BytesUtil.sol": {
+      "lastModificationDate": 1605155980057,
+      "sourceName": "contracts/thirdparty/BytesUtil.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["BytesUtil"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/AddressSet.sol": {
+      "lastModificationDate": 1605155980042,
+      "sourceName": "contracts/lib/AddressSet.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["AddressSet"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/Claimable.sol": {
+      "lastModificationDate": 1605155980042,
+      "sourceName": "contracts/lib/Claimable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["./Ownable.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["Claimable"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/Ownable.sol": {
+      "lastModificationDate": 1605155980044,
+      "sourceName": "contracts/lib/Ownable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["Ownable"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/AddressUtil.sol": {
+      "lastModificationDate": 1605155980044,
+      "sourceName": "contracts/lib/AddressUtil.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["AddressUtil"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/MathUint.sol": {
+      "lastModificationDate": 1605155980043,
+      "sourceName": "contracts/lib/MathUint.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["MathUint"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/MetaTxAwareModule.sol": {
+      "lastModificationDate": 1605155980064,
+      "sourceName": "contracts/version2_0/modules/MetaTxAwareModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/AddressUtil.sol",
+        "../../thirdparty/BytesUtil.sol",
+        "../../base/Module.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["MetaTxAwareModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/base/Module.sol": {
+      "lastModificationDate": 1605155980040,
+      "sourceName": "contracts/base/Module.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../iface/IModule.sol", "./WalletDataLayout.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["Module"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/iface/IModule.sol": {
+      "lastModificationDate": 1605155980041,
+      "sourceName": "contracts/iface/IModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["IModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/base/WalletDataLayout.sol": {
+      "lastModificationDate": 1605155980040,
+      "sourceName": "contracts/base/WalletDataLayout.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../iface/IVersion.sol",
+        "../iface/IVersionRegistry.sol",
+        "../iface/IWallet.sol",
+        "../lib/ERC20.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["WalletDataLayout"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/iface/IVersion.sol": {
+      "lastModificationDate": 1605155980041,
+      "sourceName": "contracts/iface/IVersion.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["IVersion"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/iface/IVersionRegistry.sol": {
+      "lastModificationDate": 1605155980041,
+      "sourceName": "contracts/iface/IVersionRegistry.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["IVersionRegistry"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/iface/IWallet.sol": {
+      "lastModificationDate": 1605155980040,
+      "sourceName": "contracts/iface/IWallet.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["IWallet"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/ERC20.sol": {
+      "lastModificationDate": 1605155980043,
+      "sourceName": "contracts/lib/ERC20.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["ERC20"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/ERC1271Module.sol": {
+      "lastModificationDate": 1605155980066,
+      "sourceName": "contracts/version2_0/modules/ERC1271Module.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/ERC1271.sol",
+        "../../lib/SignatureUtil.sol",
+        "../../base/Module.sol",
+        "../../base/WalletDataLayout.sol",
+        "../data/SecurityData.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["ERC1271Module"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/data/SecurityData.sol": {
+      "lastModificationDate": 1605155980067,
+      "sourceName": "contracts/version2_0/data/SecurityData.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../../base/WalletDataLayout.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["SecurityData"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/TransferModule.sol": {
+      "lastModificationDate": 1605155980064,
+      "sourceName": "contracts/version2_0/modules/TransferModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/EIP712.sol",
+        "../../lib/MathUint.sol",
+        "../data/WhitelistData.sol",
+        "../data/GuardianData.sol",
+        "../data/InheritanceData.sol",
+        "../data/SecurityData.sol",
+        "./BaseTransferModule.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["TransferModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/EIP712.sol": {
+      "lastModificationDate": 1605155980045,
+      "sourceName": "contracts/lib/EIP712.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["EIP712"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/data/WhitelistData.sol": {
+      "lastModificationDate": 1605155980069,
+      "sourceName": "contracts/version2_0/data/WhitelistData.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../../base/WalletDataLayout.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["WhitelistData"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/data/GuardianData.sol": {
+      "lastModificationDate": 1605155980067,
+      "sourceName": "contracts/version2_0/data/GuardianData.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../../base/WalletDataLayout.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["GuardianData"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/data/InheritanceData.sol": {
+      "lastModificationDate": 1605155980068,
+      "sourceName": "contracts/version2_0/data/InheritanceData.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../base/WalletDataLayout.sol",
+        "../../iface/IPriceOracle.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["InheritanceData"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/BaseTransferModule.sol": {
+      "lastModificationDate": 1605155980063,
+      "sourceName": "contracts/version2_0/modules/BaseTransferModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/EIP712.sol",
+        "../../lib/MathUint.sol",
+        "../../base/WalletDataLayout.sol",
+        "../data/GuardianData.sol",
+        "../data/OracleData.sol",
+        "../data/QuotaData.sol",
+        "../data/SecurityData.sol",
+        "./SecurityModule.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["BaseTransferModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/iface/IPriceOracle.sol": {
+      "lastModificationDate": 1605155980041,
+      "sourceName": "contracts/iface/IPriceOracle.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["IPriceOracle"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/data/OracleData.sol": {
+      "lastModificationDate": 1605155980068,
+      "sourceName": "contracts/version2_0/data/OracleData.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../base/WalletDataLayout.sol",
+        "../../iface/IPriceOracle.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["OracleData"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/data/QuotaData.sol": {
+      "lastModificationDate": 1605155980069,
+      "sourceName": "contracts/version2_0/data/QuotaData.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../base/WalletDataLayout.sol",
+        "../../iface/IPriceOracle.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["QuotaData"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/SecurityModule.sol": {
+      "lastModificationDate": 1605155980065,
+      "sourceName": "contracts/version2_0/modules/SecurityModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../base/WalletDataLayout.sol",
+        "../data/GuardianData.sol",
+        "../data/OracleData.sol",
+        "../data/QuotaData.sol",
+        "../data/SecurityData.sol",
+        "../utils/GuardianUtils.sol",
+        "../utils/SignedRequest.sol",
+        "./MetaTxAwareModule.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["SecurityModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/utils/GuardianUtils.sol": {
+      "lastModificationDate": 1605155980059,
+      "sourceName": "contracts/version2_0/utils/GuardianUtils.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../base/WalletDataLayout.sol",
+        "../../iface/IWallet.sol",
+        "../data/GuardianData.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["GuardianUtils"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/utils/SignedRequest.sol": {
+      "lastModificationDate": 1605155980060,
+      "sourceName": "contracts/version2_0/utils/SignedRequest.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/EIP712.sol",
+        "../../lib/SignatureUtil.sol",
+        "../data/HashData.sol",
+        "./GuardianUtils.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["SignedRequest"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/data/HashData.sol": {
+      "lastModificationDate": 1605155980068,
+      "sourceName": "contracts/version2_0/data/HashData.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../base/WalletDataLayout.sol",
+        "../../iface/IPriceOracle.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["HashData"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/MetaTxModule.sol": {
+      "lastModificationDate": 1605155980062,
+      "sourceName": "contracts/version2_0/modules/MetaTxModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/EIP712.sol",
+        "../../lib/MathUint.sol",
+        "../../base/WalletDataLayout.sol",
+        "../../iface/IVersion.sol",
+        "../data/GuardianData.sol",
+        "../data/OracleData.sol",
+        "../data/QuotaData.sol",
+        "../data/SecurityData.sol",
+        "./BaseTransferModule.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["MetaTxModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/WhitelistModule.sol": {
+      "lastModificationDate": 1605155980061,
+      "sourceName": "contracts/version2_0/modules/WhitelistModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/MathUint.sol",
+        "../data/WhitelistData.sol",
+        "./SecurityModule.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["WhitelistModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/RecoveryModule.sol": {
+      "lastModificationDate": 1605155980062,
+      "sourceName": "contracts/version2_0/modules/RecoveryModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/EIP712.sol",
+        "../../lib/MathUint.sol",
+        "../data/WhitelistData.sol",
+        "./SecurityModule.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["RecoveryModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/QuotaModule.sol": {
+      "lastModificationDate": 1605155980063,
+      "sourceName": "contracts/version2_0/modules/QuotaModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/EIP712.sol",
+        "../../lib/MathUint.sol",
+        "../../base/WalletDataLayout.sol",
+        "../data/GuardianData.sol",
+        "../data/SecurityData.sol",
+        "./SecurityModule.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["QuotaModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/LockModule.sol": {
+      "lastModificationDate": 1605155980062,
+      "sourceName": "contracts/version2_0/modules/LockModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/EIP712.sol",
+        "../../lib/MathUint.sol",
+        "../../base/WalletDataLayout.sol",
+        "../data/GuardianData.sol",
+        "../data/SecurityData.sol",
+        "./SecurityModule.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["LockModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/InheritanceModule.sol": {
+      "lastModificationDate": 1605155980066,
+      "sourceName": "contracts/version2_0/modules/InheritanceModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/EIP712.sol",
+        "../../lib/MathUint.sol",
+        "../data/GuardianData.sol",
+        "../data/InheritanceData.sol",
+        "../data/SecurityData.sol",
+        "./SecurityModule.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["InheritanceModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/ApprovedTransferModule.sol": {
+      "lastModificationDate": 1605155980061,
+      "sourceName": "contracts/version2_0/modules/ApprovedTransferModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/EIP712.sol",
+        "../../lib/MathUint.sol",
+        "../data/GuardianData.sol",
+        "../data/InheritanceData.sol",
+        "../data/SecurityData.sol",
+        "./BaseTransferModule.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["ApprovedTransferModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/base/Wallet.sol": {
+      "lastModificationDate": 1605155980039,
+      "sourceName": "contracts/base/Wallet.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../iface/IVersion.sol",
+        "../iface/IVersionRegistry.sol",
+        "../iface/IWallet.sol",
+        "../lib/ERC20.sol",
+        "../lib/EIP712.sol",
+        "./WalletDataLayout.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["Wallet"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/Drainable.sol": {
+      "lastModificationDate": 1605155980045,
+      "sourceName": "contracts/lib/Drainable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./AddressUtil.sol",
+        "./ERC20.sol",
+        "./ERC20SafeTransfer.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["Drainable"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/ERC20SafeTransfer.sol": {
+      "lastModificationDate": 1605155980044,
+      "sourceName": "contracts/lib/ERC20SafeTransfer.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["ERC20SafeTransfer"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/ens/BaseENSManager.sol": {
+      "lastModificationDate": 1605155980054,
+      "sourceName": "contracts/thirdparty/ens/BaseENSManager.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../strings.sol",
+        "./ENS.sol",
+        "./ENSConsumer.sol",
+        "../../lib/OwnerManagable.sol",
+        "../../lib/SignatureUtil.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["BaseENSManager", "IENSManager"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/strings.sol": {
+      "lastModificationDate": 1605155980056,
+      "sourceName": "contracts/thirdparty/strings.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["strings"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/ens/ENS.sol": {
+      "lastModificationDate": 1605155980053,
+      "sourceName": "contracts/thirdparty/ens/ENS.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["ENSRegistry", "ENSResolver", "ENSReverseRegistrar"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/ens/ENSConsumer.sol": {
+      "lastModificationDate": 1605155980054,
+      "sourceName": "contracts/thirdparty/ens/ENSConsumer.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["./ENS.sol", "../strings.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["ENSConsumer"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/Version2_0.sol": {
+      "lastModificationDate": 1605155980060,
+      "sourceName": "contracts/version2_0/Version2_0.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../iface/IModule.sol",
+        "../iface/IVersion.sol",
+        "../lib/OwnerManagable.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["Version2_0"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/ens/BaseENSResolver.sol": {
+      "lastModificationDate": 1605155980053,
+      "sourceName": "contracts/thirdparty/ens/BaseENSResolver.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../../lib/OwnerManagable.sol", "./ENS.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["BaseENSResolver"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/ens/ENSReverseRegistrarImpl.sol": {
+      "lastModificationDate": 1605155980053,
+      "sourceName": "contracts/thirdparty/ens/ENSReverseRegistrarImpl.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["./ENS.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["ENSReverseRegistrarImpl"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/ens/ENSRegistryImpl.sol": {
+      "lastModificationDate": 1605155980055,
+      "sourceName": "contracts/thirdparty/ens/ENSRegistryImpl.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["./ENS.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["ENSRegistryImpl"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/price/CachedPriceOracle.sol": {
+      "lastModificationDate": 1605155980046,
+      "sourceName": "contracts/price/CachedPriceOracle.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../iface/IPriceOracle.sol",
+        "../lib/MathUint.sol",
+        "../lib/OwnerManagable.sol",
+        "../thirdparty/SafeCast.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["CachedPriceOracle"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/SafeCast.sol": {
+      "lastModificationDate": 1605155980058,
+      "sourceName": "contracts/thirdparty/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["SafeCast"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/base/VersionRegistry.sol": {
+      "lastModificationDate": 1605155980040,
+      "sourceName": "contracts/base/VersionRegistry.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../iface/IVersionRegistry.sol", "../lib/OwnerManagable.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["VersionRegistry"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/lib/AddressSetWrapper.sol": {
+      "lastModificationDate": 1605155980048,
+      "sourceName": "contracts/test/lib/AddressSetWrapper.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../../lib/AddressSet.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["AddressSetWrapper"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/lib/SignatureUtilWrapper.sol": {
+      "lastModificationDate": 1605155980048,
+      "sourceName": "contracts/test/lib/SignatureUtilWrapper.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/ERC1271.sol",
+        "../../lib/SignatureUtil.sol",
+        "../../thirdparty/BytesUtil.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["SignatureUtilWrapper"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/TestPriceOracle.sol": {
+      "lastModificationDate": 1605155980047,
+      "sourceName": "contracts/test/TestPriceOracle.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../iface/IPriceOracle.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["TestPriceOracle"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/price/UniswapV2PriceOracle.sol": {
+      "lastModificationDate": 1605155980046,
+      "sourceName": "contracts/price/UniswapV2PriceOracle.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../iface/IPriceOracle.sol",
+        "../lib/MathUint.sol",
+        "../thirdparty/uniswap2/IUniswapV2Factory.sol",
+        "../thirdparty/uniswap2/IUniswapV2Pair.sol"
+      ],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["UniswapV2PriceOracle"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/uniswap2/IUniswapV2Factory.sol": {
+      "lastModificationDate": 1605155980055,
+      "sourceName": "contracts/thirdparty/uniswap2/IUniswapV2Factory.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["IUniswapV2Factory"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/uniswap2/IUniswapV2Pair.sol": {
+      "lastModificationDate": 1605155980056,
+      "sourceName": "contracts/thirdparty/uniswap2/IUniswapV2Pair.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["IUniswapV2Pair"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/LRCToken.sol": {
+      "lastModificationDate": 1605155980047,
+      "sourceName": "contracts/test/LRCToken.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../lib/MathUint.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": [
+        "BasicToken",
+        "ERC20",
+        "ERC20Basic",
+        "LRCToken",
+        "SafeMath",
+        "StandardToken"
+      ]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/DummyToken.sol": {
+      "lastModificationDate": 1605155980047,
+      "sourceName": "contracts/test/DummyToken.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../lib/MathUint.sol", "./LRCToken.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["DummyToken"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/tokens/WETH.sol": {
+      "lastModificationDate": 1605155980051,
+      "sourceName": "contracts/test/tokens/WETH.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../DummyToken.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["WETH"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/tokens/USDT.sol": {
+      "lastModificationDate": 1605155980050,
+      "sourceName": "contracts/test/tokens/USDT.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../DummyToken.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["USDT"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/tokens/REP.sol": {
+      "lastModificationDate": 1605155980052,
+      "sourceName": "contracts/test/tokens/REP.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../DummyToken.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["REP"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/tokens/RDN.sol": {
+      "lastModificationDate": 1605155980050,
+      "sourceName": "contracts/test/tokens/RDN.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../DummyToken.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["RDN"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/tokens/LRC.sol": {
+      "lastModificationDate": 1605155980051,
+      "sourceName": "contracts/test/tokens/LRC.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../DummyToken.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["LRC"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/tokens/INDB.sol": {
+      "lastModificationDate": 1605155980049,
+      "sourceName": "contracts/test/tokens/INDB.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../DummyToken.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["INDB"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/tokens/INDA.sol": {
+      "lastModificationDate": 1605155980049,
+      "sourceName": "contracts/test/tokens/INDA.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../DummyToken.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["INDA"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/tokens/GTO.sol": {
+      "lastModificationDate": 1605155980051,
+      "sourceName": "contracts/test/tokens/GTO.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["../DummyToken.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["GTO"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/MigrationModule.sol": {
+      "lastModificationDate": 1605155980065,
+      "sourceName": "contracts/version2_0/modules/MigrationModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["./SecurityModule.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["MigrationModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/version2_0/modules/GuardianModule.sol": {
+      "lastModificationDate": 1605155980065,
+      "sourceName": "contracts/version2_0/modules/GuardianModule.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["./SecurityModule.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["GuardianModule"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/Greeter.sol": {
+      "lastModificationDate": 1605155846944,
+      "sourceName": "contracts/Greeter.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": ["hardhat/console.sol"],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["Greeter"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1605156259243,
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [">=0.4.22 <0.8.0"],
+      "artifacts": ["console"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/MathInt.sol": {
+      "lastModificationDate": 1605155980044,
+      "sourceName": "contracts/lib/MathInt.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["MathInt"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/lib/ReentrancyGuard.sol": {
+      "lastModificationDate": 1605155980043,
+      "sourceName": "contracts/lib/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["ReentrancyGuard"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/test/TestTargetContract.sol": {
+      "lastModificationDate": 1605155980048,
+      "sourceName": "contracts/test/TestTargetContract.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["TestTargetContract"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/Cloneable.sol": {
+      "lastModificationDate": 1605155980056,
+      "sourceName": "contracts/thirdparty/Cloneable.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["Cloneable"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/Create2.sol": {
+      "lastModificationDate": 1605155980056,
+      "sourceName": "contracts/thirdparty/Create2.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["Create2"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/ERC165.sol": {
+      "lastModificationDate": 1605155980058,
+      "sourceName": "contracts/thirdparty/ERC165.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["ERC165"]
+    },
+    "/usr/local/klzhong/workspace/loopring/protocols/packages/hebao_v2/contracts/thirdparty/MockContract.sol": {
+      "lastModificationDate": 1605155980057,
+      "sourceName": "contracts/thirdparty/MockContract.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": ["ast"]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": ["^0.7.0"],
+      "artifacts": ["MockContract", "MockInterface"]
+    }
+  }
+}

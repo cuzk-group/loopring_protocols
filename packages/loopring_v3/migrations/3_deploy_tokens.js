@@ -6,6 +6,7 @@ const RDNToken = artifacts.require("./test/tokens/RDN.sol");
 const REPToken = artifacts.require("./test/tokens/REP.sol");
 const WETHToken = artifacts.require("./test/tokens/WETH.sol");
 const TESTToken = artifacts.require("./test/tokens/TEST.sol");
+const USDTToken = artifacts.require("./test/tokens/USDT.sol");
 const INDAToken = artifacts.require("./test/tokens/INDA.sol");
 const INDBToken = artifacts.require("./test/tokens/INDB.sol");
 
@@ -18,17 +19,18 @@ module.exports = function(deployer, network, accounts) {
       await deployer.deploy(REPToken);
       await deployer.deploy(WETHToken);
       await deployer.deploy(TESTToken);
+      await deployer.deploy(USDTToken);
       await deployer.deploy(INDAToken);
       await deployer.deploy(INDBToken);
 
-      const lrcToken = await LRCToken.deployed();
-      const gtoToken = await GTOToken.deployed();
+      const usdtToken = await USDTToken.deployed();
+      const indaToken = await INDAToken.deployed();
 
       if (process.env.TEST_ENV == "docker") {
         for (const account of accounts) {
           console.log("feed tokens for:", account);
-          await lrcToken.setBalance(account, "1" + "0".repeat(28));
-          await gtoToken.setBalance(account, "1" + "0".repeat(28));
+          await usdtToken.setBalance(account, "1" + "0".repeat(28));
+          await indaToken.setBalance(account, "1" + "0".repeat(28));
         }
       }
     });

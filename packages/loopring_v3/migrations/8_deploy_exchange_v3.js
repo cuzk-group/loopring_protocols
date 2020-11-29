@@ -17,11 +17,12 @@ const DefaultDepositContract = artifacts.require("DefaultDepositContract");
 const LoopringIOExchangeOwner = artifacts.require("LoopringIOExchangeOwner");
 const AgentRegistry = artifacts.require("AgentRegistry");
 const LoopringAmmSharedConfig = artifacts.require("LoopringAmmSharedConfig");
-const LRCToken = artifacts.require("./test/tokens/LRC.sol");
-const GTOToken = artifacts.require("./test/tokens/GTO.sol");
+const USDTToken = artifacts.require("./test/tokens/USDT.sol");
+const INDAToken = artifacts.require("./test/tokens/INDA.sol");
 
 const LoopringAmmPool = artifacts.require("LoopringAmmPool");
 const LoopringAmmPoolCopy = artifacts.require("LoopringAmmPoolCopy");
+const LoopringAmmPoolCopy2 = artifacts.require("LoopringAmmPoolCopy2");
 const BlockVerifier = artifacts.require("BlockVerifier");
 
 module.exports = function(deployer, network, accounts) {
@@ -62,6 +63,7 @@ module.exports = function(deployer, network, accounts) {
       const emptyMerkleRoot =
         "0x1efe4f31c90f89eb9b139426a95e5e87f6e0c9e8dab9ddf295e3f9d651f54698";
       const exchangeV3 = await ExchangeV3.deployed();
+      console.log(LoopringV3.address, process.env.FROM, emptyMerkleRoot);
       await exchangeV3.initialize(
         LoopringV3.address,
         process.env.FROM,
@@ -76,14 +78,20 @@ module.exports = function(deployer, network, accounts) {
       console.log("setup amms:");
       // setup amm:
       // register tokens:
-      await exchangeV3.registerToken(GTOToken.address);
+      await exchangeV3.registerToken(USDTToken.address);
+      await exchangeV3.registerToken(INDAToken.address);
       await exchangeV3.registerToken(LoopringAmmPool.address);
       await exchangeV3.registerToken(LoopringAmmPoolCopy.address);
+      await exchangeV3.registerToken(LoopringAmmPoolCopy2.address);
       // register universal agent:
       const agentRegistry = await AgentRegistry.deployed();
       await agentRegistry.registerUniversalAgent(LoopringAmmPool.address, true);
       await agentRegistry.registerUniversalAgent(
         LoopringAmmPoolCopy.address,
+        true
+      );
+      await agentRegistry.registerUniversalAgent(
+        LoopringAmmPoolCopy2.address,
         true
       );
 
@@ -101,12 +109,12 @@ module.exports = function(deployer, network, accounts) {
       const poolConfig1 = {
         sharedConfig: LoopringAmmSharedConfig.address,
         exchange: exchangeV3.address,
-        poolName: "LRC-ETH-Pool-3",
+        poolName: "USDT-ETH-Pool-3",
         accountID: 1,
-        tokens: [LRCToken.address, "0x" + "00".repeat(20)],
+        tokens: [USDTToken.address, "0x" + "00".repeat(20)],
         weights: [10000, 10000],
         feeBips: 30,
-        tokenSymbol: "LP-LRCETH"
+        tokenSymbol: "LP-USDTETH"
       };
       const ammPool1 = await LoopringAmmPool.deployed();
       await ammPool1.setupPool(poolConfig1);
@@ -116,34 +124,49 @@ module.exports = function(deployer, network, accounts) {
       const poolConfig2 = {
         sharedConfig: LoopringAmmSharedConfig.address,
         exchange: exchangeV3.address,
-        poolName: "GTO-ETH-Pool-3",
+        poolName: "INDA-ETH-Pool-3",
         accountID: 2,
-        tokens: [GTOToken.address, "0x" + "00".repeat(20)],
+        tokens: [INDAToken.address, "0x" + "00".repeat(20)],
         weights: [10000, 10000],
         feeBips: 30,
-        tokenSymbol: "LP-GTOETH"
+        tokenSymbol: "LP-INDAETH"
       };
       const ammPool2 = await LoopringAmmPoolCopy.deployed();
       await ammPool2.setupPool(poolConfig2);
       console.log("poolConfig2:", poolConfig2);
       console.log("ammPool2.address:", ammPool2.address);
 
-      const lrcToken = await LRCToken.deployed();
-      const gtoToken = await GTOToken.deployed();
+      const poolConfig3 = {
+        sharedConfig: LoopringAmmSharedConfig.address,
+        exchange: exchangeV3.address,
+        poolName: "INDA-USDT-Pool-3",
+        accountID: 3,
+        tokens: [INDAToken.address, USDTToken.address],
+        weights: [10000, 10000],
+        feeBips: 30,
+        tokenSymbol: "LP-INDAUSDT"
+      };
+      const ammPool3 = await LoopringAmmPoolCopy2.deployed();
+      await ammPool3.setupPool(poolConfig3);
+      console.log("poolConfig3:", poolConfig3);
+      console.log("ammPool3.address:", ammPool3.address);
+
+      const usdtToken = await USDTToken.deployed();
+      const indaToken = await INDAToken.deployed();
       // do the deposit for all accounts:
       for (const account of accounts) {
         console.log("do deposit for:", account);
-        await lrcToken.approve(depositContract.address, "1" + "0".repeat(28), {
+        await usdtToken.approve(depositContract.address, "1" + "0".repeat(28), {
           from: account
         });
-        await gtoToken.approve(depositContract.address, "1" + "0".repeat(28), {
+        await indaToken.approve(depositContract.address, "1" + "0".repeat(28), {
           from: account
         });
 
         await exchangeV3.deposit(
           account,
           account,
-          LRCToken.address,
+          USDTToken.address,
           "1" + "0".repeat(26),
           [],
           { from: account, gas: 200000 }
@@ -152,7 +175,7 @@ module.exports = function(deployer, network, accounts) {
         await exchangeV3.deposit(
           account,
           account,
-          GTOToken.address,
+          INDAToken.address,
           "1" + "0".repeat(26),
           [],
           { from: account, gas: 200000 }
@@ -169,10 +192,15 @@ module.exports = function(deployer, network, accounts) {
       }
 
       // set VK in blockVerifier:
+      const blockVerifier = await BlockVerifier.deployed();
+
       const vk = JSON.parse(fs.readFileSync("test/all_16_vk.json", "ascii"));
       const vkFlattened = flattenList(flattenVK(vk));
-      const blockVerifier = await BlockVerifier.deployed();
       await blockVerifier.registerCircuit(0, 16, 0, vkFlattened);
+
+      const vk2 = JSON.parse(fs.readFileSync("test/all_64_vk.json", "ascii"));
+      const vkFlattened2 = flattenList(flattenVK(vk2));
+      await blockVerifier.registerCircuit(0, 64, 0, vkFlattened2);
     }
   });
 };
