@@ -279,6 +279,7 @@ contract SmartWallet is ERC1271
         uint    gasPrice,
         uint    gasLimit,
         uint    gasOverhead,
+        uint    feeAmount;
         bool    requiresSuccess,
         bytes   calldata data,
         bytes   calldata signature
@@ -293,6 +294,7 @@ contract SmartWallet is ERC1271
             gasPrice,
             gasLimit,
             gasOverhead,
+            feeAmount,
             requiresSuccess,
             data,
             signature

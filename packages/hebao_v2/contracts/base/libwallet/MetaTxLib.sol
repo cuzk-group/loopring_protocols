@@ -44,6 +44,7 @@ library MetaTxLib
         uint    gasPrice;
         uint    gasLimit;
         uint    gasOverhead;
+        uint    feeAmount;
         bool    requiresSuccess;
         bytes   data;
         bytes   signature;
@@ -66,6 +67,7 @@ library MetaTxLib
             metaTx.gasPrice,
             metaTx.gasLimit,
             metaTx.gasOverhead,
+            metaTx.feeAmount,
             metaTx.requiresSuccess,
             keccak256(metaTx.data)
         );
@@ -109,9 +111,14 @@ library MetaTxLib
         uint gasUsed = gasLeft - gasleft() + metaTx.gasOverhead;
 
         // Reimburse
-        if (metaTx.gasPrice > 0 && (!metaTx.requiresSuccess || success)) {
-            uint gasToReimburse = gasUsed <= metaTx.gasLimit ? gasUsed : metaTx.gasLimit;
-            uint gasCost = gasToReimburse.mul(metaTx.gasPrice);
+        if ((metaTx.gasPrice > 0 || metaTx.feeAmount > 0) && (!metaTx.requiresSuccess || success)) {
+            uint gasCost = 0;
+            if (metaTx.feeAmount > 0) {
+                gasCost = metaTx.feeAmount;
+            } else {
+                uint gasToReimburse = gasUsed <= metaTx.gasLimit ? gasUsed : metaTx.gasLimit;
+                gasCost = gasToReimburse.mul(metaTx.gasPrice);
+            }
 
             wallet.checkAndAddToSpent(
                 priceOracle,
