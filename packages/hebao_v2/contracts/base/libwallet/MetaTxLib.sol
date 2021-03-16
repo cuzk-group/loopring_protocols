@@ -26,7 +26,7 @@ library MetaTxLib
     using ERC20Lib      for Wallet;
 
     bytes32 public constant META_TX_TYPEHASH = keccak256(
-        "MetaTx(address relayer,address to,uint256 nonce,address gasToken,uint256 gasPrice,uint256 gasLimit,uint256 gasOverhead,bytes data)"
+        "MetaTx(address relayer,address to,uint256 nonce,address gasToken,uint256 gasPrice,uint256 gasLimit,uint256 gasOverhead,uint feeAmount,bytes data)"
     );
 
     event MetaTxExecuted(
