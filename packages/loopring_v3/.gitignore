@@ -22,3 +22,5 @@ genkeys/
 EDDSA_KeyPair.json
 *.deployed
 .tmp.*
+.ccls-cache/
+compile_commands.json
